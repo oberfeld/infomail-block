@@ -64,12 +64,13 @@ export default function Edit( { attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Zeitperiode', 'infomail-block')}>
-					<fieldset style={{ width: '100%' }}>
+					<fieldset style={{ width: '100%', paddingBottom: 16 }}>
                             <legend style={{ fontWeight: 600, marginBottom: 8 }}>
                                 {__('Startdatum', 'infomail-block')}
                             </legend>
 					<DatePicker
-						currentDate ={ startDate || '' }
+							currentDate={startDate || ''}
+							startOfWeek={ 1 }
                         onChange={ ( value ) =>
                             setAttributes( { startDate: value } )
                         }
@@ -80,7 +81,8 @@ export default function Edit( { attributes, setAttributes }) {
                                 {__('Enddatum', 'infomail-block')}
                             </legend>
 					<DatePicker
-						currentDate ={ endDate || '' }
+							currentDate={endDate || ''}
+							startOfWeek={ 1 }
                         onChange={ ( value ) =>
                             setAttributes( { endDate: value } )
                         }

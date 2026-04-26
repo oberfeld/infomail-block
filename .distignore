@@ -1,0 +1,33 @@
+# .distignore
+
+# Source & dev files
+src/
+node_modules/
+vendor/
+
+# Config files
+.vscode/
+.wp-env.json
+.editorconfig
+.gitignore
+.eslintrc
+.prettierrc
+phpcs.xml
+phpunit.xml
+webpack.config.js
+
+# Dev dependencies manifests
+package.json
+package-lock.json
+composer.json
+composer.lock
+
+# Tests
+tests/
+
+# Misc
+*.map
+*.log
+.DS_Store
+
+build-zip.sh

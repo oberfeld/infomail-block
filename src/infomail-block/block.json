@@ -6,15 +6,22 @@
 	"title": "Infomail Block",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Zeigt eine Auswahl von Beiträgen fürs Oberfeld-Infomail an.",
 	"example": {},
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"startDate": {
+			"type": "string",
+			"default": ""
+		},
+		"endDate": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"textdomain": "infomail-block",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"viewScript": "file:./view.js"
+	"render": "file:./render.php"
 }

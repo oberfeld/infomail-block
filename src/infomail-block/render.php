@@ -58,10 +58,10 @@ while ($query->have_posts()) {
 
 	$post_id    = get_the_ID();
 	$title      = get_the_title($post_id);
-	$author     = get_the_author();
 	$permalink  = get_permalink($post_id);
 	$post       = get_post($post_id);
 	$raw_content = $post ? $post->post_content : '';
+	$categories = get_the_category($post_id);
 
 	$extended    = get_extended($raw_content);
 	$main_content = isset($extended['main']) ? $extended['main'] : '';
@@ -69,8 +69,18 @@ while ($query->have_posts()) {
 
 	$html .= '<article class="infomail-post">';
 	$html .= '<h3 class="infomail-post-title">' . esc_html($title) . '</h3>';
-	$html .= '<p class="infomail-post-author">Von: ' . esc_html($author) . '</p>';
 
+	$known_categories = array_filter($categories, function($category) {
+		return $category->term_id != 1; // Exclude "Uncategorized" category which usually has ID 1.
+	});
+
+	if(!empty($known_categories)) {
+		$category_names = array_map(function($cat) {
+			return esc_html($cat->name);
+		}, $known_categories);
+		$html .= '<p class="infomail-post-categories">' . implode(', ', $category_names) . '</p>';
+	}
+	
 	if ('' !== trim($main_content)) {
 		$html .= '<div class="infomail-post-content">' . apply_filters('the_content', $main_content) . '</div>';
 	}

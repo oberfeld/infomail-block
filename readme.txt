@@ -7,6 +7,12 @@ License:           MIT
 
 Zeigt eine Auswahl von Beiträgen fürs Oberfeld-Infomail an
 
+== Development ==
+
+- WordPress `Studio` starten, Webseite öffnen.
+- Ins Verzeichnis `wp-content/plugins/infomail-block` wechseln.
+- `npm run start` ausführen für Live-CSS & JS-Änderungen.
+
 == Installation ==
 
 - Version in `package.json` und `infomail-block.php` anpassen

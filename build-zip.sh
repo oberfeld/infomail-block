@@ -3,7 +3,7 @@ set -e
 
 PLUGIN_SLUG="infomail-block"
 VERSION=$(node -p "require('./package.json').version")
-DEST="../${PLUGIN_SLUG}-${VERSION}.zip"
+DEST=$(realpath "../")/${PLUGIN_SLUG}-${VERSION}.zip
 
 echo "🔨 Building ${PLUGIN_SLUG} v${VERSION}..."
 
@@ -18,7 +18,7 @@ rsync -rc \
 
 cd /tmp
 zip -r ${PLUGIN_SLUG}-${VERSION}.zip ${PLUGIN_SLUG}/
-mv ${PLUGIN_SLUG}-${VERSION}.zip $(cd - && pwd)/../
+mv ${PLUGIN_SLUG}-${VERSION}.zip "${DEST}"
 
 # Cleanup
 #rm -rf /tmp/${PLUGIN_SLUG}

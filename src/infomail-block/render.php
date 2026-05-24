@@ -66,21 +66,22 @@ while ($query->have_posts()) {
 	$extended    = get_extended($raw_content);
 	$main_content = isset($extended['main']) ? $extended['main'] : '';
 	$has_more     = ! empty($extended['extended']);
-
-	$html .= '<article class="infomail-post">';
-	$html .= '<h3 class="infomail-post-title">' . esc_html($title) . '</h3>';
-
-	$known_categories = array_filter($categories, function($category) {
+	$known_categories = array_filter($categories, function ($category) {
 		return $category->term_id != 1; // Exclude "Uncategorized" category which usually has ID 1.
 	});
 
-	if(!empty($known_categories)) {
-		$category_names = array_map(function($cat) {
-			return esc_html($cat->name);
+	$html .= '<article class="infomail-post">';
+
+	if (!empty($known_categories)) {
+		$category_names = array_map(function ($cat) {
+			return '<span class="infomail-post-category">' . esc_html($cat->name) . '</span>';
 		}, $known_categories);
-		$html .= '<p class="infomail-post-categories">' . implode(', ', $category_names) . '</p>';
+
+		$html .= '<p class="infomail-post-categories">' . implode(' ', $category_names) . '</p>';
 	}
-	
+
+	$html .= '<h3 class="infomail-post-title">' . esc_html($title) . '</h3>';
+
 	if ('' !== trim($main_content)) {
 		$html .= '<div class="infomail-post-content">' . apply_filters('the_content', $main_content) . '</div>';
 	}

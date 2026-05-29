@@ -1,6 +1,6 @@
 {
 	"name": "infomail-block",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Zeigt eine Auswahl von Beiträgen fürs Oberfeld-Infomail an.",
 	"author": "Christian Studer",
 	"license": "MIT",

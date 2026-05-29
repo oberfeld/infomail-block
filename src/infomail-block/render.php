@@ -80,7 +80,7 @@ while ($query->have_posts()) {
 		$html .= '<p class="infomail-post-categories">' . implode(' ', $category_names) . '</p>';
 	}
 
-	$html .= '<h3 class="infomail-post-title">' . esc_html($title) . '</h3>';
+	$html .= '<h2 class="infomail-post-title">' . esc_html($title) . '</h2>';
 
 	if ('' !== trim($main_content)) {
 		$html .= '<div class="infomail-post-content">' . apply_filters('the_content', $main_content) . '</div>';
@@ -88,8 +88,10 @@ while ($query->have_posts()) {
 
 	if ($has_more) {
 		$escaped_url = esc_url($permalink);
-		$html       .= '<p class="infomail-post-more">Weiterlesen: <a href="' . $escaped_url . '">' . $escaped_url . '</a></p>';
+		$html       .= '<p class="infomail-post-more"><a href="' . $escaped_url . '">Weiterlesen →</a></p>';
 	}
+
+	$html .= '<hr class="wp-block-separator alignfull has-alpha-channel-opacity">';
 
 	$html .= '</article>';
 }

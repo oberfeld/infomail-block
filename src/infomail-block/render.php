@@ -91,7 +91,7 @@ while ($query->have_posts()) {
 		$html       .= '<p class="infomail-post-more"><a href="' . $escaped_url . '">Weiterlesen →</a></p>';
 	}
 
-	$html .= '<hr class="wp-block-separator alignfull has-alpha-channel-opacity">';
+	$html .= '<hr class="wp-block-separator alignfull has-alpha-channel-opacity infomail-block-hr">';
 
 	$html .= '</article>';
 }

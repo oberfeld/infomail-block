@@ -9,7 +9,7 @@ Zeigt eine Auswahl von Beiträgen fürs Oberfeld-Infomail an
 
 == Development ==
 
-- WordPress `Studio` starten, Webseite öffnen.
+- WordPress `Studio` starten, Webseite öffnen -> Sample page: <http://localhost:8881/sample-page/>
 - Ins Verzeichnis `wp-content/plugins/infomail-block` wechseln.
 - `npm run start` ausführen für Live-CSS & JS-Änderungen.
 

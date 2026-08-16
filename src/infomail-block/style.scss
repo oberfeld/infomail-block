@@ -1,17 +1,23 @@
 .page-last-modified {
-    display: none;
+	display: none;
 }
 
 article.infomail-post {
-    margin-bottom: 5em;
+	margin-bottom: 5em;
 }
 
 .infomail-post-category {
-    display: inline-block;
-    margin: 0 0 0.75rem;
-    padding: 0.4rem 0.75rem;
-    font-size: 0.8rem;
-    line-height: 1.2;
-    border: 1px solid #000;
-    border-radius: 0.55rem;
+    width: fit-content;
+	border-radius: 16px;
+	border-color: currentColor;
+	border-width: 1px;
+	border-style: solid;
+	font-size: var(--wp--preset--font-size--small);
+    font-weight: 800;
+	letter-spacing: normal;
+	line-height: 1.5;
+	padding-top: 0.2rem;
+	padding-right: 0.6rem;
+	padding-bottom: 0.25rem;
+	padding-left: 0.6rem;
 }

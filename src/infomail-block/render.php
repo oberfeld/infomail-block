@@ -72,6 +72,8 @@ while ($query->have_posts()) {
 
 	$html .= '<article class="infomail-post">';
 
+	$html .= '<hr class="wp-block-separator alignfull has-alpha-channel-opacity infomail-block-hr">';
+
 	if (!empty($known_categories)) {
 		$category_names = array_map(function ($cat) {
 			return '<span class="infomail-post-category">' . esc_html($cat->name) . '</span>';
@@ -90,8 +92,6 @@ while ($query->have_posts()) {
 		$escaped_url = esc_url($permalink);
 		$html       .= '<p class="infomail-post-more"><a href="' . $escaped_url . '">Weiterlesen →</a></p>';
 	}
-
-	$html .= '<hr class="wp-block-separator alignfull has-alpha-channel-opacity infomail-block-hr">';
 
 	$html .= '</article>';
 }

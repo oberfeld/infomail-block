@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Infomail Block
  * Description:       Zeigt eine Auswahl von Beiträgen fürs Oberfeld-Infomail an.
- * Version:           0.3.1
+ * Version:           0.4.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
  * Author:            Christian Studer
